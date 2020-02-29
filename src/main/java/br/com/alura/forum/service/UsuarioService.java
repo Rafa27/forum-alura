@@ -12,8 +12,13 @@ import br.com.alura.forum.model.Usuario;
 @Service
 public class UsuarioService implements UserDetailsService {
 
-	@Autowired
 	private UsuarioDao usuarioDao;
+
+	@Autowired
+	//private UsuarioDao usuarioDao;
+	public UsuarioService(UsuarioDao usuarioDao) {
+		this.usuarioDao = usuarioDao;
+	}
 	
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -22,7 +27,7 @@ public class UsuarioService implements UserDetailsService {
 		if (encontrado == null) {
 			throw new UsernameNotFoundException("Dados invalidos!");
 		}
-		
+
 		return encontrado;
 	}
 	

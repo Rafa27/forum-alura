@@ -30,7 +30,7 @@ public class JPAConfiguration {
 		return em;
 	}
 
-	/* DATASOURCE DE DESENVOLVIMENTO 
+	/* DATASOURCE DE DESENVOLVIMENTO */
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -39,9 +39,9 @@ public class JPAConfiguration {
 		dataSource.setUsername("root");
 		dataSource.setPassword("");
 		return dataSource;
-	}*/
+	}
 
-	/* DATASOURCE DE PRODUCAO*/
+	/* DATASOURCE DE PRODUCAO
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -51,7 +51,7 @@ public class JPAConfiguration {
 		dataSource.setPassword("qwerty123");
 		return dataSource;
 	}
-	
+	*/
 	
 	@Bean
 	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
