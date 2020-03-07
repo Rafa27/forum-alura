@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+  - name: update
+    become: yes
+    apt:
+      update_cache: apt
+  - become: yes
+    apt:
+      name: sql_server
+      state: present
